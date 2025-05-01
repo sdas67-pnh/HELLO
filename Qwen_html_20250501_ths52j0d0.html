@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Microcontroller Mind Map</title>
+  
+  <!-- Required: MindElixir CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mind-elixir@2.0.0/dist/mind-elixir.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    #app {
+      width: 100%;
+      min-height: 80vh; /* Ensure the mind map area has space */
+      border-top: 1px solid #ddd;
+      background: white;
+    }
+
+    .controls {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .controls a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">Mainak and APU SIR INSTITUTE</div>
+
+  <!-- Mind Map Container -->
+  <div id="app"></div>
+
+  <!-- WhatsApp Share Button -->
+  <div class="controls">
+    <a href="whatsapp://send?text=Check%20out%20this%20interactive%20microcontroller%20mind%20map%20from%20Mainak%20and%20APU%20SIR%20INSTITUTE!%20https://your-hosted-url.com" 
+       data-action="share/whatsapp/share">
+      💬 Share via WhatsApp
+    </a>
+  </div>
+
+  <!-- MindElixir Library -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-elixir@2.0.0/dist/mind-elixir.js"></script>
+
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", function () {
+      const mind = new MindElixir({
+        el: '#app',
+        direction: MindElixir.LEFT,
+        data: {
+          nodeTree: {
+            id: 'root',
+            topic: 'Microcontroller Concepts',
+            children: [
+              {
+                id: '8051',
+                topic: '8051 Microcontroller',
+                children: [
+                  { id: 'arch8051', topic: 'Architecture' },
+                  { id: 'instr8051', topic: 'Instruction Set' },
+                  { id: 'interrupts8051', topic: 'Interrupts' }
+                ]
+              },
+              {
+                id: '8085',
+                topic: '8085 Microprocessor',
+                children: [
+                  { id: 'arch8085', topic: 'Architecture' },
+                  { id: 'instr8085', topic: 'Instruction Set' },
+                  { id: 'flags8085', topic: 'Flags' }
+                ]
+              }
+            ]
+          }
+        },
+        draggable: true,
+        editable: true
+      });
+
+      mind.init();
+    });
+  </script>
+</body>
+</html>
